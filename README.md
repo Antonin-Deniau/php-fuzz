@@ -27,7 +27,6 @@ use AntoninDeniau\Fuz\Mutator;
 $logger = new Logger('fuzzer');
 $logger->pushHandler(new ErrorLogHandler());
 
-$mutator = new Mutator();
 $fuzzer = new Fuzzer($logger, new Mutator());
 
 function test($input) {
