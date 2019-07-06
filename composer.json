@@ -1,0 +1,24 @@
+{
+    "name": "antonin-deniau/fuzz",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Antonin Deniau",
+            "email": "antonin.deniau@nameshield.net"
+        }
+    ],
+    "require": {
+        "psr/container": "^1.0",
+        "psr/log": "^1.1",
+        "php-di/php-di": "^5.4",
+        "monolog/monolog": "^1.24"
+    },
+		"autoload": {
+			"classmap": [
+				"src/"
+			],
+			"psr-4": {
+				"AntoninDeniau\\Fuz\\": "src/"
+			}
+		}
+}
