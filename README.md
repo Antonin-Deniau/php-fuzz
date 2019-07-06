@@ -7,6 +7,19 @@ so it will not perform verry well for now.
 This is a general purpose fuzzer for PHP projects.
 It's use some sort of genetic algorithm, and tracing via XDEBUG.
 
+It store the exception generated in the 'results' folder.
+Inputs that trigger new path in the application are stored in the 'new_content' folder
+The logger input in the Fuzzer contructor is Psr compliant.
+
+- [x] Basic fuzzer part
+- [x] Basic tracing part
+- [x] Basic genetic part
+- [ ] Add new fuzzer mutation
+- [ ] Add the 'bucket' afl algorithm
+- [ ] Tweak the genetic ratio
+- [ ] Document the functions
+- [ ] Add the library to composer
+
 Usage example:
 --------------
 
