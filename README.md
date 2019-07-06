@@ -29,6 +29,7 @@ $logger->pushHandler(new ErrorLogHandler());
 
 $fuzzer = new Fuzzer($logger, new Mutator());
 
+// The 'application' to test (Here I'm using the fuzzer to reach the 'return true')
 function test($input) {
     if (strlen($input) !== 7) return false;
     if ($input[0] !== "P") return false;
@@ -42,13 +43,13 @@ function test($input) {
     return True;
 }
 
-$t = function ($data) {
+$t = function ($data) { // The function that will use the data to test the application
     if (test($data)) {
         $this->running = false;
     }
 };
 
-$pop = [new Genome("test", 0)];
+$pop = [new Genome("test", 0)]; // The population (currenly one input, with 0 fitness)
 
-$fuzzer->fuzz($pop, $t);
+$fuzzer->fuzz($pop, $t); // Launch the fuzzer
 ```
