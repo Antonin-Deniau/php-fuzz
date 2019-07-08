@@ -42,24 +42,22 @@ $logger->pushHandler(new ErrorLogHandler());
 
 $fuzzer = new Fuzzer($logger, new Mutator());
 
-// The 'application' to test (Here I'm using the fuzzer to reach the 'return true')
+// The 'application' to test
 function test($input) {
     if (strlen($input) !== 7) return false;
-    if ($input[0] !== "P") return false;
-    if ($input[1] !== "A") return false;
-    if ($input[2] !== "S") return false;
-    if ($input[3] !== "S") return false;
-    if ($input[4] !== "W") return false;
-    if ($input[5] !== "O") return false;
-    if ($input[6] !== "R") return false;
-    if ($input[6] !== "D") return false;
-    return True;
+    if ($input[0] !== "P") return;
+    if ($input[1] !== "A") return;
+    if ($input[2] !== "S") return;
+    if ($input[3] !== "S") return;
+    if ($input[4] !== "W") return;
+    if ($input[5] !== "O") return;
+    if ($input[6] !== "R") return;
+    if ($input[6] !== "D") return;
+    return new Exception("Reached error");
 }
 
 $t = function ($data) { // The function that will use the data to test the application
-    if (test($data)) {
-        $this->running = false;
-    }
+    test($data);
 };
 
 $pop = [new Genome("test", 0)]; // The population (currenly one input, with 0 fitness)
