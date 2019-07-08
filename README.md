@@ -44,7 +44,7 @@ $fuzzer = new Fuzzer($logger, new Mutator());
 
 // The 'application' to test
 function test($input) {
-    if (strlen($input) !== 7) return false;
+    if (strlen($input) !== 7) return;
     if ($input[0] !== "P") return;
     if ($input[1] !== "A") return;
     if ($input[2] !== "S") return;
